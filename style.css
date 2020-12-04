@@ -120,5 +120,5 @@ a {
     text-align: center;
     padding-left: 15%;
     padding-right: 15%;
-    overflow: scroll;
+    overflow-y: auto;
 }
