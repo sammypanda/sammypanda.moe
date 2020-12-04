@@ -31,7 +31,6 @@ body {
     grid-template-columns: 5% auto 5%;
     grid-template-rows: min-content 10% 30% 5% auto;
 
-    background: linear-gradient(0deg, #ffe1f9 0%, #d5deff 20%);
     animation-name: sunrise;
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -45,15 +44,23 @@ a {
     text-decoration: underline;
 }
 
+#theme {
+    grid-row: 1;
+    grid-column: 3;
+    margin: 25% 35% auto auto;
+    color: var(--theme);
+    cursor: pointer;
+}
+
 .header, .projects, #info {
     font-family: 'Dosis', sans-serif;
     grid-column: 2;
+    color: var(--theme);
 }
 
 .header {
     display: grid;
     grid-template-rows: auto 20px;
-    color: white;
 }
 
 .header h1 {
@@ -70,7 +77,7 @@ a {
     border: unset;
     margin: auto;
     margin-bottom: 0;
-    background-color: white;
+    background-color: var(--theme);
     height: 50%;
     width: 0;
     animation: spread 1s forwards;
@@ -90,7 +97,6 @@ a {
     display: grid;
     border: 2px solid white;
     border-radius: 30px;
-    color: white;
     overflow: hidden;
 }
 
@@ -115,7 +121,6 @@ a {
     opacity: 0%;
     animation: appear 1s 1s forwards;
     font-size: 30px;
-    color: white;
     grid-row: 5;
     text-align: center;
     padding-left: 15%;
