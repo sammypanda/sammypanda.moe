@@ -1,5 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+
+@keyframes appear {
+    from { opacity: 0%; }
+    to { opacity: 100%; }
+}
+
+@keyframes expand {
+    from { padding: 10%; opacity: 100%; }
+    to { padding: 0%; opacity: 100%; }
+}
+
+@keyframes sunrise { 
+    0% { background-size: 200% 200%; }
+    100% { background-size: 100% 100%; }
+}
+
+@keyframes spread {
+    0% { width: 0%; }
+    100% { width: 60%; }
+}
+
 html, body {
     margin: 0;
     width: 100%;
     height: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 5% auto 5%;
+    grid-template-rows: min-content 10% 30% 5% auto;
+
+    background: linear-gradient(0deg, #ffe1f9 0%, #d5deff 20%);
+    animation-name: sunrise;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    background-size: 100% 100%;
+}
+
+a {
+    all: unset;
+    color: unset;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.header, .projects, #info {
+    font-family: 'Dosis', sans-serif;
+    grid-column: 2;
+}
+
+.header {
+    display: grid;
+    grid-template-rows: auto 20px;
+    color: white;
+}
+
+.header h1 {
+    opacity: 0%;
+    animation: appear 1s .5s forwards;
+    grid-row: 1;
+    font-size: 40px;
+    padding-top: 2%;
+    margin: auto;
+    margin-bottom: 1%;
+}
+
+.header hr {
+    border: unset;
+    margin: auto;
+    margin-bottom: 0;
+    background-color: white;
+    height: 50%;
+    width: 0;
+    animation: spread 1s forwards;
+}
+
+.projects {
+    opacity: 0%;
+    animation: expand 1s 1s forwards;
+    display: grid;
+    grid-row: 3;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 100%;
+    grid-gap: 2%;
+}
+
+.projects .container {
+    display: grid;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    overflow: hidden;
+}
+
+.projects .container:hover {
+    background-color: white;
+}
+
+.projects .container:hover > img {
+    transition: .2s;
+    max-height: 85%;
+    max-width: 85%;
+}
+
+.projects .container img {
+    margin: auto;
+    opacity: 100%;
+    max-height: 80%; 
+    max-width: 80%;
+}
+
+#info {
+    opacity: 0%;
+    animation: appear 1s 1s forwards;
+    font-size: 30px;
+    color: white;
+    grid-row: 5;
+    text-align: center;
+    padding-left: 15%;
+    padding-right: 15%;
 }

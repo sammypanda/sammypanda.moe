@@ -3,6 +3,26 @@
     <head>
         <title>sammypanda</title>
         <link rel='stylesheet' href='style.css'>
-        <link rel='icon' href='favicon.ico'>
+        <link rel='icon' href='assets/img/meta/favicon.ico'>
+        <script src='app.js'></script>
     </head>
+
+    <body>
+        <div class='header'>
+            <h1>Sammy's Portfolio</h1>
+            <hr>
+        </div>
+
+        <div class='projects'>
+            <a class='container' onmouseover='info(this, "current")'><img src='assets/img/meta/favicon.ico'></a>
+
+            <a class='container' onmouseover='info(this, "compui")'><img src='assets/img/project/compui.png'></a>
+
+            <a class='container' onmouseover='info(this, "murb")'><img src='assets/img/project/murb.png'></a>
+            <a class='container' onmouseover='info(this, "coderacer")'><img src='assets/img/project/coderacer.png'></a>
+            <a class='container' onmouseover='info(this, "dragonsgauntlet")'><img src='assets/img/project/dragonsgauntlet.png' style='border-radius: 50%'></a>
+        </div>
+
+        <p id='info'></p>
+    </body>
 </html>
