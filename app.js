@@ -22,7 +22,7 @@ info = (container, project) => {
             container.childNodes[0].src = "assets/img/project/coderacer.png"
             break
         case "dragonsgauntlet":
-            info.innerHTML = "Sammy was called in by a past teacher to help on Dragons Gauntlet, it's a fully-fledged LARP interface and event manager, built with React and Typescript! But this project is sadly locked away as the development is proprietary"
+            info.innerHTML = "Sammy was called in by a past teacher to help on Dragons Gauntlet, it's a fully-fledged LARP interface and event manager, built with React and Typescript and translated to Vue/NuxtJS! But this project is sadly locked away as the development is proprietary"
             container.setAttribute("href", "https://github.com/Samdvich/DragonsGauntlet/tree/typescript")
             container.childNodes[0].src = "assets/img/project/dragonsgauntlet.png"
             break
