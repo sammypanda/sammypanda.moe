@@ -37,11 +37,13 @@ themeToggle = (theme) => {
         document.body.style.background = "linear-gradient(0deg, #ffe1f9 0%, #d5deff 20%)";
         document.getElementById('theme').setAttribute('onclick','themeToggle("dark")')
         document.getElementById('theme').style.color = "dimgray";
+        document.getElementById('theme').style.backgroundColor = "#d5deff";
         document.querySelector(':root').style.setProperty('--theme', 'white');
     } else if (theme == "dark") {
         document.body.style.background = "#444444";
         document.getElementById('theme').setAttribute('onclick','themeToggle("light")')
         document.getElementById('theme').style.color = "white";
+        document.getElementById('theme').style.backgroundColor = "#444444";
         document.querySelector(':root').style.setProperty('--theme', 'silver');
     }
 }

@@ -29,7 +29,7 @@ html, body {
 body {
     display: grid;
     grid-template-columns: 5% auto 5%;
-    grid-template-rows: min-content 10% 30% 5% auto;
+    grid-template-rows: min-content 10% auto;
 
     animation-name: sunrise;
     animation-duration: 2s;
@@ -45,11 +45,15 @@ a {
 }
 
 #theme {
-    grid-row: 1;
-    grid-column: 3;
-    margin: 25% 35% auto auto;
+    z-index: 10;
+    border-radius: 100%;
+    background-color: var(--theme);
+    padding: 5px;
+    margin: 1% 1% 0 0;
     color: var(--theme);
     cursor: pointer;
+    position: absolute;
+    right: 0;
 }
 
 .header, .projects, #info {
@@ -71,6 +75,7 @@ a {
     padding-top: 2%;
     margin: auto;
     margin-bottom: 1%;
+    text-align: center;
 }
 
 .header hr {
@@ -84,13 +89,23 @@ a {
 }
 
 .projects {
-    opacity: 0%;
-    animation: expand 1s 1s forwards;
-    display: grid;
     grid-row: 3;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 100%;
-    grid-gap: 2%;
+    opacity: 0%;
+    animation: appear 1s 1s forwards;
+    font-size: 30px;
+    text-align: center;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects .button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
 }
 
 .projects .container {
@@ -98,6 +113,8 @@ a {
     border: 2px solid white;
     border-radius: 30px;
     overflow: hidden;
+    height: 100px;
+    width: 100px;
 }
 
 .projects .container:hover {
@@ -121,9 +138,15 @@ a {
     opacity: 0%;
     animation: appear 1s 1s forwards;
     font-size: 30px;
-    grid-row: 5;
     text-align: center;
     padding-left: 15%;
     padding-right: 15%;
     overflow-y: auto;
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        grid-template-rows: min-content 3% auto;
+    }
+
 }
