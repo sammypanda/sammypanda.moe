@@ -39,7 +39,7 @@ info = (container, project) => {
             break
         case "dragonsgauntlet":
             info.innerHTML = "Sammy was called in by a past teacher to help on Dragons Gauntlet, it's a fully-fledged LARP interface and event manager, built with React and Typescript and translated to Vue/NuxtJS! But this project is sadly locked away as the development is proprietary"
-            container.childNodes[3].setAttribute("href", "https://github.com/sammypanda/DragonsGauntlet/tree/typescript")
+            container.childNodes[3].setAttribute("href", "https://github.com/sammypanda/DragonsGauntlet")
             container.childNodes[1].src = "assets/img/project/dragonsgauntlet.png"
             resetGoto(4)
             break
