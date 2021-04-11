@@ -43,6 +43,12 @@ info = (container, project) => {
             container.childNodes[1].src = "assets/img/project/dragonsgauntlet.png"
             resetGoto(4)
             break
+        case "rnotes-v":
+            info.innerHTML = "This was Sammy's super quick first attempt at Vue"
+            container.childNodes[3].setAttribute("href", "https://github.com/Samdvich/RNotes-V/")
+            container.childNodes[1].src = "assets/img/project/rnotes-v.png"
+            resetGoto(5)
+            break
         default:
             info.innerHTML = ""
             break
