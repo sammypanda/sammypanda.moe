@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sammypanda</title>
+        <meta content="width=device-width, initial-scale=0.8" name="viewport">
+        <link rel='stylesheet' href='style.css'>
+        <link rel='icon' href='assets/img/meta/favicon.ico'>
+    </head>
+
+    <svg id='theme' width="2rem" height="2rem" viewBox="0 0 16 16" class="bi bi-moon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
+    </svg>
+
+    <body>
+        <div class="header">
+            <h1>Sammy's Portfolio</h1>
+            <hr>
+            <ul class="menu">
+                <li><a href="index.html">home</a></li>
+                <li><a href="portfolio.html">portfolio</a></li>
+            </ul>
+        </div>
+
+        <div class='projects'>
+            <div class='button'>
+                <div class='container' onmouseover='info(this, "current")'>
+                    <div class='icon'>
+                        <img alt="Sammy's Home Logo" src='assets/img/meta/favicon.ico'>
+                    </div>
+                    <a class='nav' target='_blank'>goto</a>
+                </div>
+                
+                <div class='container' onmouseover='info(this, "compui")'>
+                    <div class='icon'>
+                        <img alt="Comp UI Logo" src='assets/img/project/compui.png'>
+                    </div>
+                    <a class='nav' target='_blank'>goto</a>
+                </div>
+                
+                <div class='container' onmouseover='info(this, "murb")'>
+                    <div class='icon'>
+                        <img alt="Music Curb Logo" src='assets/img/project/murb.png'>
+                    </div>
+                    <a class='nav' target='_blank'>goto</a>
+                </div>
+
+                <div class='container' onmouseover='info(this, "coderacer")'>
+                    <div class='icon'>
+                        <img alt="CodeRacer Logo" src='assets/img/project/coderacer.png'>
+                    </div>
+                    <a class='nav' target='_blank'>goto</a>
+                </div>
+
+                <div class='container' onmouseover='info(this, "dragonsgauntlet")'>
+                    <div class='icon'>
+                        <img alt="DragonsGauntlet Logo" src='assets/img/project/dragonsgauntlet.png' style='border-radius: 50%'>
+                    </div>
+                    <a class='nav' target='_blank'>goto</a>
+                </div>
+            </div>
+
+            <p id='info'></p>
+        </div>
+
+        <script src='app.js'></script>
+
+        <style>
+            .projects {
+                margin-top: 10%;
+                display: flex;
+                opacity: 0%;
+                animation: appear 1s 1s forwards;
+                font-size: 30px;
+                text-align: center;
+                overflow-y: auto;
+                flex-direction: column;
+            }
+
+            .projects .button {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .projects .container > .icon {
+                display: flex;
+                border: 2px solid white;
+                border-radius: 30px;
+                overflow: hidden;
+                height: 100px;
+                width: 100px;
+            }
+
+            .projects .container:hover > .icon {
+                background-color: white;
+            }
+
+            .projects .container:hover > .icon > img {
+                transition: .2s;
+                max-height: 85%;
+                max-width: 85%;
+            }
+
+            .projects .container > .icon > img {
+                margin: auto;
+                opacity: 100%;
+                max-height: 80%; 
+                max-width: 80%;
+            }
+
+            .projects .container > .nav {
+                visibility: hidden;
+                display: flex;
+                justify-content: center;
+                background-color: transparent;
+                color: var(--theme);
+                font-size: 20px;
+                width: 50px;
+                padding: 10%;
+                border-radius: 10px;
+                margin: 10% auto 0 auto;
+            }
+
+            #info {
+                opacity: 0%;
+                animation: appear 1s 1s forwards;
+                font-size: 30px;
+                text-align: center;
+                padding-left: 15%;
+                padding-right: 15%;
+                overflow-y: auto;
+            }
+        </style>
+    </body>
+</html>

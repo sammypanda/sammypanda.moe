@@ -22,14 +22,13 @@
 
 html, body {
     margin: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 body {
-    display: grid;
-    grid-template-columns: 5% auto 5%;
-    grid-template-rows: min-content 10% auto;
+    display: flex;
+    flex-direction: column;
 
     animation-name: sunrise;
     animation-duration: 2s;
@@ -53,24 +52,24 @@ a {
     color: var(--theme);
     cursor: pointer;
     position: absolute;
+    top: 0;
     right: 0;
 }
 
 .header, .projects, #info {
     font-family: 'Dosis', sans-serif;
-    grid-column: 2;
     color: var(--theme);
 }
 
 .header {
-    display: grid;
-    grid-template-rows: auto 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
 }
 
 .header h1 {
     opacity: 0%;
     animation: appear 1s .5s forwards;
-    grid-row: 1;
     font-size: 40px;
     padding-top: 2%;
     margin: auto;
@@ -80,86 +79,25 @@ a {
 
 .header hr {
     border: unset;
-    margin: auto;
     margin-bottom: 0;
     background-color: var(--theme);
-    height: 50%;
-    width: 0;
+    height: 5px;
     animation: spread 1s forwards;
 }
 
-.projects {
-    grid-row: 3;
-    opacity: 0%;
-    animation: appear 1s 1s forwards;
-    font-size: 30px;
-    text-align: center;
-    overflow-y: auto;
+.header ul {
+    all: unset;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.projects .button {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    margin-top: 8px;
+    gap: 10px;
     justify-content: center;
-    gap: 12px;
+    list-style: none;
 }
 
-.projects .container > .icon {
-    display: grid;
-    border: 2px solid white;
-    border-radius: 30px;
-    overflow: hidden;
-    height: 100px;
-    width: 100px;
+.menu a {
+    text-decoration: none;
 }
 
-.projects .container:hover > .icon {
-    background-color: white;
-}
-
-.projects .container:hover > .icon > img {
-    transition: .2s;
-    max-height: 85%;
-    max-width: 85%;
-}
-
-.projects .container > .icon > img {
-    margin: auto;
-    opacity: 100%;
-    max-height: 80%; 
-    max-width: 80%;
-}
-
-.projects .container > .nav {
-    visibility: hidden;
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
-    color: var(--theme);
-    font-size: 20px;
-    width: 50px;
-    padding: 10%;
-    border-radius: 10px;
-    margin: 10% auto 0 auto;
-}
-
-#info {
-    opacity: 0%;
-    animation: appear 1s 1s forwards;
-    font-size: 30px;
-    text-align: center;
-    padding-left: 15%;
-    padding-right: 15%;
-    overflow-y: auto;
-}
-
-@media screen and (max-width: 400px) {
-    body {
-        grid-template-rows: min-content 3% auto;
-    }
-
+.menu a:hover {
+    text-decoration: underline;
 }
