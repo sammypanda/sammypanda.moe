@@ -62,13 +62,19 @@ themeToggle = (theme) => {
         document.getElementById('theme').style.color = "dimgray";
         document.getElementById('theme').style.backgroundColor = "#d5deff";
         document.querySelector(':root').style.setProperty('--theme', 'white');
+        localStorage.setItem('theme', "light");
     } else if (theme == "dark") {
         document.body.style.background = "#444444";
         document.getElementById('theme').setAttribute('onclick','themeToggle("light")')
         document.getElementById('theme').style.color = "white";
         document.getElementById('theme').style.backgroundColor = "#444444";
         document.querySelector(':root').style.setProperty('--theme', 'silver');
+        localStorage.setItem('theme', "dark");
     }
 }
 
-themeToggle("light"); // Default Theme
+if (localStorage.theme) {
+    themeToggle(localStorage.theme)
+} else {
+    themeToggle("light"); // Default Theme
+}
