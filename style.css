@@ -65,6 +65,7 @@ a {
     display: flex;
     flex-direction: column;
     margin-top: 5%;
+    cursor: default;
 }
 
 .header h1 {
@@ -75,6 +76,14 @@ a {
     margin: auto;
     margin-bottom: 1%;
     text-align: center;
+}
+
+h1::selection, a::selection, p::selection, img::selection {
+    all: unset;
+}
+
+#info::selection, #info a::selection {
+    color: pink;
 }
 
 .header hr {
@@ -100,4 +109,5 @@ a {
 
 .menu a:hover {
     text-decoration: underline;
+    text-decoration-color: inherit;
 }
