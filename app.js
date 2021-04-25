@@ -1,3 +1,8 @@
+/* Kitty */
+if (Math.floor(Math.random() * 2) !== 1) {
+    document.getElementById('cat').style.display = "none"
+} 
+
 function resetGoto(omit) {
     const allGotos = document.getElementsByClassName('nav')
 

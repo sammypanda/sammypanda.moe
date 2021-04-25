@@ -11,13 +11,26 @@
 }
 
 @keyframes sunrise { 
-    0% { background-size: 200% 200%; }
-    100% { background-size: 100% 100%; }
+    from { background-size: 200% 200%; }
+    to { background-size: 100% 100%; }
 }
 
 @keyframes spread {
-    0% { width: 0%; }
-    100% { width: 60%; }
+    from { width: 0%; }
+    to { width: 60%; }
+}
+
+@keyframes turny {
+    from { transform: rotate(10deg) }
+    25% { transform: rotate(10deg) }
+    50% { transform: rotate(-10deg) }
+    75% { transform: rotate(-10deg) }
+    to { transform: rotate(10deg) }
+}
+
+@keyframes cat {
+    from { bottom: -200px; }
+    to { bottom: 0; }
 }
 
 html, body {
@@ -34,6 +47,7 @@ body {
     animation-duration: 2s;
     animation-fill-mode: forwards;
     background-size: 100% 100%;
+    overflow: hidden;
 }
 
 a {
@@ -54,6 +68,44 @@ a {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+#cat {
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    color: var(--theme);
+    cursor: grabbing;
+    position: absolute;
+    bottom: -200px;
+    left: 20%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+    animation-name: cat;
+    animation-delay: 1s;
+    animation-duration: 1.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#cat .head {
+    z-index: 10;
+    height: 25px;
+    width: 30px;
+    margin-bottom: -5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    animation-name: turny;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+}
+
+#cat .body {
+    z-index: 5;
 }
 
 .header, .projects, #info {
