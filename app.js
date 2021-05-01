@@ -1,7 +1,27 @@
 /* Kitty */
+const cat = document.getElementById('cat')
 if (Math.floor(Math.random() * 100) !== 1) {
-    document.getElementById('cat').remove()
+    // cat.remove()
 } 
+
+function isPetting(id) {
+    console.log(id)
+    if (id == cat.id) {
+        console.log("playing")
+        cat.style.animationPlayState = "running"
+        setTimeout(() => {
+            console.log("pausing")
+            cat.style.animationPlayState = "paused"
+        }, 2000)
+    } else {
+        console.log("pausing")
+        cat.style.animationPlayState = "paused"
+    }
+}
+
+cat.addEventListener("mousemove", (mm) => {
+    isPetting(mm.target.id)
+})
 
 function resetGoto(omit) {
     const allGotos = document.getElementsByClassName('nav')

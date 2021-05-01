@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
 
+:root {
+    --cat-height: 10px;
+}
+
 @keyframes appear {
     from { opacity: 0%; }
     to { opacity: 100%; }
@@ -30,7 +34,7 @@
 
 @keyframes cat {
     from { bottom: -200px; }
-    to { bottom: 0; }
+    to { bottom: var(--cat-height); }
 }
 
 html, body {
@@ -70,42 +74,27 @@ a {
     right: 0;
 }
 
-#cat {
-    z-index: 10;
-    width: 50px;
-    height: 50px;
-    color: var(--theme);
-    cursor: grabbing;
+.cat-wrap {
     position: absolute;
     bottom: -200px;
-    left: 20%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    flex-direction: column;
-    animation-name: cat;
-    animation-delay: 1s;
-    animation-duration: 1.3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: cat 2s ease 1s 1 forwards;
 }
 
-#cat .head {
-    z-index: 10;
-    height: 25px;
-    width: 30px;
-    margin-bottom: -5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    animation-name: turny;
-    animation-duration: 1.3s;
-    animation-iteration-count: infinite;
+#cat {
+    height: 50px;
+    width: 50px;
+    bottom: var(--cat-height);
+    top: 50%;
+    left: 50%;
+    text-align: center;
 }
 
-#cat .body {
-    z-index: 5;
+#cat:hover, #cat:active {
+    bottom: var(--cat-height);
+    animation: cat paused, turny 2s infinite;
+    cursor: grab;
 }
 
 .header, .projects, #info {
