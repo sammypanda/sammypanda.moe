@@ -39,19 +39,21 @@
 
 html, body {
     margin: 0;
-    width: 100vw;
-    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+html {
+    animation-name: sunrise;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body {
     display: flex;
     flex-direction: column;
-
-    animation-name: sunrise;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    background-size: 100% 100%;
-    overflow: hidden;
 }
 
 a {
