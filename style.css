@@ -89,7 +89,7 @@ a {
     top: 50%;
     left: 50%;
     text-align: center;
-    animation: turny paused 2s infinite linear;
+    animation: turny paused 1.5s infinite linear;
     cursor: grab;
     transition: all 0.5s;
 }
