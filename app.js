@@ -1,7 +1,11 @@
 /* Kitty */
 const cat = document.getElementById('cat')
-if (Math.floor(Math.random() * 100) !== 1) {
-    // cat.remove()
+
+/**
+ * remove cat if portfolio.html can be found anywhere in the url
+ */
+if (window.location.href.split("/").find(part => part == "portfolio.html")) {
+    cat.remove()
 } 
 
 function isPetting(id) {
