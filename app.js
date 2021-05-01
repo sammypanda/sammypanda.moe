@@ -1,6 +1,6 @@
 /* Kitty */
 if (Math.floor(Math.random() * 100) !== 1) {
-    document.getElementById('cat').style.display = "none"
+    document.getElementById('cat').remove()
 } 
 
 function resetGoto(omit) {
