@@ -5,16 +5,12 @@ if (Math.floor(Math.random() * 100) !== 1) {
 } 
 
 function isPetting(id) {
-    console.log(id)
     if (id == cat.id) {
-        console.log("playing")
         cat.style.animationPlayState = "running"
         setTimeout(() => {
-            console.log("pausing")
             cat.style.animationPlayState = "paused"
         }, 2000)
     } else {
-        console.log("pausing")
         cat.style.animationPlayState = "paused"
     }
 }

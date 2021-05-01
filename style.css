@@ -25,11 +25,11 @@
 }
 
 @keyframes turny {
-    from { transform: rotate(10deg) }
+    from { transform: rotate(0deg) }
     25% { transform: rotate(10deg) }
-    50% { transform: rotate(-10deg) }
-    75% { transform: rotate(-10deg) }
-    to { transform: rotate(10deg) }
+    50% { transform: rotate(0deg) }
+    85% { transform: rotate(-10deg) }
+    to { transform: rotate(0deg) }
 }
 
 @keyframes cat {
@@ -89,12 +89,9 @@ a {
     top: 50%;
     left: 50%;
     text-align: center;
-}
-
-#cat:hover, #cat:active {
-    bottom: var(--cat-height);
-    animation: cat paused, turny 2s infinite;
+    animation: turny paused 2s infinite linear;
     cursor: grab;
+    transition: all 0.5s;
 }
 
 .header, .projects, #info {
