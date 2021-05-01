@@ -1,5 +1,5 @@
 /* Kitty */
-if (Math.floor(Math.random() * 2) !== 1) {
+if (Math.floor(Math.random() * 100) !== 1) {
     document.getElementById('cat').style.display = "none"
 } 
 
