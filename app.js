@@ -1,4 +1,6 @@
-/* Kitty */
+/**
+ * set global variables
+ */
 const cat = document.getElementById('cat')
 
 /**
@@ -8,6 +10,10 @@ if (window.location.href.split("/").find(part => part == "portfolio.html")) {
     cat.remove()
 } 
 
+/**
+ * set the play state of the kitty turny animation
+ * @param {string} id
+ */
 function isPetting(id) {
     if (id == cat.id) {
         cat.style.animationPlayState = "running"
@@ -19,10 +25,17 @@ function isPetting(id) {
     }
 }
 
+/**
+ * detect if the users mouse is moving on top of the #cat element
+ */
 cat.addEventListener("mousemove", (mm) => {
     isPetting(mm.target.id)
 })
 
+/**
+ * resets each portfolio goto link except the one with the array index of the omit param
+ * @param {integer} omit 
+ */
 function resetGoto(omit) {
     const allGotos = document.getElementsByClassName('nav')
 
@@ -35,6 +48,11 @@ function resetGoto(omit) {
     }
 }
 
+/**
+ * stores info and sets the goto link for each portfolio
+ * @param {object} container | usually just called with 'this' on the element
+ * @param {string} project | the name of the project in all lowercase
+ */
 info = (container, project) => {
     var info = document.getElementById('info')
     switch (project) {
@@ -80,6 +98,10 @@ info = (container, project) => {
     }
 }
 
+/**
+ * for changing theming and keeping a localstorage 'theme' entry
+ * @param {string} theme | the name of the theme
+ */
 themeToggle = (theme) => {
     if (theme == "light") {
         document.body.style.background = "linear-gradient(0deg, #ffe1f9 0%, #d5deff 20%)";
@@ -98,6 +120,9 @@ themeToggle = (theme) => {
     }
 }
 
+/**
+ * searches localstorage for theme, or provides default theme
+ */
 if (localStorage.theme) {
     themeToggle(localStorage.theme)
 } else {
