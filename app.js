@@ -8,7 +8,7 @@ const cat = document.getElementById('cat')
  */
 if (window.location.href.split("/").find(part => part == "portfolio.html")) {
     cat.remove()
-} 
+}
 
 /**
  * set the play state of the kitty turny animation
@@ -34,7 +34,7 @@ cat.addEventListener("mousemove", (mm) => {
 
 /**
  * resets each portfolio goto link except the one with the array index of the omit param
- * @param {integer} omit 
+ * @param {integer} omit
  */
 function resetGoto(omit) {
     const allGotos = document.getElementsByClassName('nav')
@@ -63,8 +63,8 @@ info = (container, project) => {
             resetGoto(0)
             break
         case "compui":
-            info.innerHTML = "I'm a web application for schools with team-based competitive events. I was built for Shailer Park State High School's use. You can try me out with U:admin@eq.edu.au P:admin.%.account. Here's my <a href='https://github.com/sammypanda/CompUI'>source code</a>"
-            container.childNodes[3].setAttribute("href", "http://shaiparkshs.ipto.com.au/11%20Digital%20Solutions/spage65/CompUI/login.php")
+            info.innerHTML = "I'm a web application for schools with team-based competitive events. I was built for Shailer Park State High School's use."
+            container.childNodes[3].setAttribute("href", "https://github.com/sammypanda/CompUI")
             container.childNodes[1].src = "assets/img/project/compui.png"
             resetGoto(1)
             break
