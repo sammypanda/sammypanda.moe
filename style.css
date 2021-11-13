@@ -76,12 +76,9 @@ a {
     right: 0;
 }
 
-.socials a:not(:first-of-type) {
-    margin-left: 10px;
-}
-
-.socials a:not(:last-of-type) {
-    margin-left: 0;
+.socials li {
+    display: flex;
+    gap: 8px;
 }
 
 .cat-wrap {
