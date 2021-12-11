@@ -121,6 +121,19 @@ a {
     color: var(--theme);
 }
 
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.images img {
+    max-width: 90%;
+    height: fit-content;
+}
+
 .pointer {
     cursor: pointer;
 }
