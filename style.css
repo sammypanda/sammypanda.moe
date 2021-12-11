@@ -101,9 +101,28 @@ a {
     transition: all 0.5s;
 }
 
-.header, .projects, #info {
+.categories {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+    text-align: center;
+    gap: 10px;
+}
+
+.selected {
+    text-decoration: underline;
+}
+
+.header, .projects, .descriptor, #info {
     font-family: 'Dosis', sans-serif;
     color: var(--theme);
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 .header {

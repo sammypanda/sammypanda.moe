@@ -26,7 +26,19 @@
             </ul>
         </div>
 
-        <div class='projects'>
+        <div class='categories'>
+            <div class='descriptor pointer' onclick='changePortfolio(this, "pixely")'>
+                Pixel Art
+            </div>
+            <div class='descriptor pointer' onclick='changePortfolio(this, "web")'>
+                Web Development
+            </div>
+            <div class='descriptor pointer' onclick='changePortfolio(this, "shell")'>
+                Terminal Programs
+            </div>
+        </div>
+
+        <div class='projects' id='web'>
             <div class='button'>
                 <div class='container' onmouseover='info(this, "current")'>
                     <div class='icon'>
@@ -38,13 +50,6 @@
                 <div class='container' onmouseover='info(this, "compui")'>
                     <div class='icon'>
                         <img alt="Comp UI Logo" src='assets/img/project/compui.png'>
-                    </div>
-                    <a class='nav' target='_blank'>goto</a>
-                </div>
-                
-                <div class='container' onmouseover='info(this, "murb")'>
-                    <div class='icon'>
-                        <img alt="Music Curb Logo" src='assets/img/project/murb.png'>
                     </div>
                     <a class='nav' target='_blank'>goto</a>
                 </div>
@@ -70,16 +75,38 @@
                     <a class='nav' target='_blank'>goto</a>
                 </div>
             </div>
-
-            <p id='info'></p>
         </div>
+
+        <div class='projects' id='shell'>
+            <div class='button'>
+                <div class='container' onmouseover='info(this, "murb")'>
+                    <div class='icon'>
+                        <img alt="Music Curb Logo" src='assets/img/project/murb.png'>
+                    </div>
+                    <a class='nav' target='_blank'>goto</a>
+                </div>
+            </div>
+        </div>
+
+        <div class='projects' id='pixely'>
+            <div class='button'>
+                <!-- <div class='container' onmouseover='info(this, "murb")'>
+                    <div class='icon'>
+                        <img alt="Music Curb Logo" src='assets/img/project/murb.png'>
+                    </div>
+                    <a class='nav' target='_blank'>goto</a>
+                </div> -->
+            </div>
+        </div>
+
+        <p id='info'></p>
 
         <script src='app.js'></script>
 
         <style>
             .projects {
                 margin-top: 50px;
-                display: flex;
+                display: none;
                 opacity: 0%;
                 animation: appear 1s 1s forwards;
                 font-size: 30px;

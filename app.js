@@ -55,6 +55,7 @@ function resetGoto(omit) {
  */
 info = (container, project) => {
     var info = document.getElementById('info')
+    info.style.visibility = "visible"
     switch (project) {
         case "current":
             info.innerHTML = "I'm the portfolio page you're on right now, I was made from absolute scratch!"
@@ -72,25 +73,25 @@ info = (container, project) => {
             info.innerHTML = "I'm Murb (my full name is \"Music Curb\"), I'm an <a href='https://github.com/sammypanda/murb'>open source</a> music broadcasting platform. I'm also Sammy's first time using typescript and his second time using Shell."
             container.childNodes[3].setAttribute("href", "https://github.com/sammypanda/murb")
             container.childNodes[1].src = "assets/img/project/murb.png"
-            resetGoto(2)
+            resetGoto(5)
             break
         case "coderacer":
             info.innerHTML = "I'm a time-based quiz game, around basic web development knowledge. I'm also Sammy's first PHP project!"
             container.childNodes[3].setAttribute("href", "https://github.com/sammypanda/CodeRacer")
             container.childNodes[1].src = "assets/img/project/coderacer.png"
-            resetGoto(3)
+            resetGoto(2)
             break
         case "dragonsgauntlet":
             info.innerHTML = "Sammy was called in by a past teacher to help on Dragons Gauntlet, it's a fully-fledged LARP interface and event manager, built with React and Typescript and translated to Vue/NuxtJS! But this project is sadly locked away as the development is proprietary"
             container.childNodes[3].setAttribute("href", "https://github.com/sammypanda/DragonsGauntlet")
             container.childNodes[1].src = "assets/img/project/dragonsgauntlet.png"
-            resetGoto(4)
+            resetGoto(3)
             break
         case "rnotes-v":
             info.innerHTML = "This was Sammy's super quick first attempt at Vue"
             container.childNodes[3].setAttribute("href", "https://github.com/sammypanda/RNotes-V/")
             container.childNodes[1].src = "assets/img/project/rnotes-v.png"
-            resetGoto(5)
+            resetGoto(4)
             break
         default:
             info.innerHTML = ""
@@ -118,6 +119,31 @@ themeToggle = (theme) => {
         document.querySelector(':root').style.setProperty('--theme', 'silver');
         localStorage.setItem('theme', "dark");
     }
+}
+
+/**
+ * changing the portfolio category
+ */
+changePortfolio = (title, category) => {
+    console.log(document.getElementsByClassName('projects'));
+
+    const pcategories = document.getElementsByClassName('projects'); // portfolio categories
+    const ptitles = document.getElementsByClassName('descriptor'); // the titles of the portfolios
+    const currcategory = document.getElementById(category); // current selected category
+
+    [...pcategories].forEach(category => {
+        // console.log(category)
+        category.style.display = "none"
+    });
+
+    [...ptitles].forEach(ptitle => {
+        console.log(ptitle)
+        ptitle.classList.remove("selected")
+    })
+
+    document.getElementById('info').style.visibility = "hidden"
+    currcategory.style.display = "flex";
+    title.classList.add("selected")
 }
 
 /**
