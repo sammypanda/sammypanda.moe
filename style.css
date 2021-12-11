@@ -127,9 +127,10 @@ a {
     gap: 20px;
     flex-wrap: wrap;
     align-items: center;
+    max-width: 100%;
 }
 
-.images img {
+.images img, .images video {
     max-width: 90%;
     height: fit-content;
 }
