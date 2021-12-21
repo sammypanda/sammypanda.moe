@@ -156,6 +156,12 @@ a {
     text-align: center;
 }
 
+.header h2 {
+    text-align: center;
+    line-height: 0;
+    font-size: 16px;
+}
+
 h1::selection, a::selection, p::selection, img::selection {
     all: unset;
 }
