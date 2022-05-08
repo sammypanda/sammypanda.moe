@@ -5,9 +5,11 @@ const cat = document.getElementById('cat')
 
 /**
  * remove cat if portfolio.html can be found anywhere in the url
+ * and add overflow-y to the page
  */
 if (window.location.href.split("/").find(part => part == "portfolio.html")) {
     cat.remove()
+    document.getElementById("overflowy").style["overflow-y"] = "auto"; 
 }
 
 /**
