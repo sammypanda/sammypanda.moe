@@ -1,14 +1,14 @@
 /**
  * set global variables
  */
-const cat = document.getElementById('cat')
+const pet = document.getElementById('pet')
 
 /**
- * remove cat if portfolio.html can be found anywhere in the url
+ * remove pet if portfolio.html can be found anywhere in the url
  * and add overflow-y to the page
  */
 if (window.location.href.split("/").find(part => part == "portfolio.html")) {
-    cat.remove()
+    pet.remove()
     document.getElementById("overflowy").style["overflow-y"] = "auto"; 
 }
 
@@ -17,20 +17,20 @@ if (window.location.href.split("/").find(part => part == "portfolio.html")) {
  * @param {string} id
  */
 function isPetting(id) {
-    if (id == cat.id) {
-        cat.style.animationPlayState = "running"
+    if (id == pet.id) {
+        pet.style.animationPlayState = "running"
         setTimeout(() => {
-            cat.style.animationPlayState = "paused"
+            pet.style.animationPlayState = "paused"
         }, 2000)
     } else {
-        cat.style.animationPlayState = "paused"
+        pet.style.animationPlayState = "paused"
     }
 }
 
 /**
- * detect if the users mouse is moving on top of the #cat element
+ * detect if the users mouse is moving on top of the #pet element
  */
-cat.addEventListener("mousemove", (mm) => {
+pet.addEventListener("mousemove", (mm) => {
     isPetting(mm.target.id)
 })
 
@@ -112,6 +112,8 @@ themeToggle = (theme) => {
         document.getElementById('theme').style.color = "dimgray";
         document.getElementById('theme').style.backgroundColor = "#d5deff";
         document.querySelector(':root').style.setProperty('--theme', 'white');
+        pet.alt = "Dog";
+        pet.src = "assets/img/dog.png"
         localStorage.setItem('theme', "light");
     } else if (theme == "dark") {
         document.documentElement.style.background = "#444444";
@@ -119,6 +121,8 @@ themeToggle = (theme) => {
         document.getElementById('theme').style.color = "white";
         document.getElementById('theme').style.backgroundColor = "#444444";
         document.querySelector(':root').style.setProperty('--theme', 'silver');
+        pet.alt = "Cat";
+        pet.src = "assets/img/cat.png"
         localStorage.setItem('theme', "dark");
     }
 }

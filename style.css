@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
 
 :root {
-    --cat-height: 10px;
+    --pet-height: 10px;
 }
 
 @keyframes appear {
@@ -32,9 +32,9 @@
     to { transform: rotate(0deg) }
 }
 
-@keyframes cat {
+@keyframes pet {
     from { bottom: -200px; }
-    to { bottom: var(--cat-height); }
+    to { bottom: var(--pet-height); }
 }
 
 html, body {
@@ -82,18 +82,18 @@ a {
     gap: 8px;
 }
 
-.cat-wrap {
+.pet-wrap {
     position: absolute;
     bottom: -200px;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: cat 2s ease 1s 1 forwards;
+    animation: pet 2s ease 1s 1 forwards;
 }
 
-#cat {
+#pet {
     height: 50px;
-    width: 50px;
-    bottom: var(--cat-height);
+    width: auto;
+    bottom: var(--pet-height);
     top: 50%;
     left: 50%;
     text-align: center;
@@ -102,7 +102,7 @@ a {
     transition: all 0.5s;
 }
 
-.categories {
+.petegories {
     display: flex;
     flex-direction: column;
     margin: auto;
