@@ -66,7 +66,7 @@ info = (container, project) => {
             resetGoto(0)
             break
         case "compui":
-            info.innerHTML = "I'm a web application for schools with team-based competitive events. I was built for Shailer Park State High School's use."
+            info.innerHTML = "I'm a web application for schools with team-based competitive events. I was built for a real high school to use."
             container.childNodes[3].setAttribute("href", "https://github.com/sammypanda/CompUI")
             container.childNodes[1].src = "assets/img/project/compui.png"
             resetGoto(1)
