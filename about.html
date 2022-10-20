@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sammypanda</title>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link rel='stylesheet' href='style.css?v=2'>
+        <link rel='icon' href='assets/img/meta/favicon.ico'>
+    </head>
+
+    <svg id='theme' width="30px" height="30px" viewBox="0 0 16 16" class="bi bi-moon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
+    </svg>
+
+    <div class='pet-wrap'>
+        <img id='pet' alt="pet" ontouchmove="isPetting(this.id)" src='assets/img/cat.png'/>
+    </div>
+
+    <body id="overflowy">
+        <div class="header">
+            <h1>who is?</h1>
+            <!-- <hr> -->
+            <ul class="menu">
+                <li><a href="index.html">home</a></li>
+                <li>|</li>
+                <li><a href="portfolio.html">portfolio</a></li>
+                <li>|</li>
+                <li><a href="https://ko-fi.com/sammypanda" target="_blank" rel="noopener noreferrer">support me</a></li>
+            </ul>
+        </div>
+
+        <div class="sections">
+            <section id="music" onclick="window.open('https://last.fm/user/sammypanda', '_blank')">
+                <div class="feature">
+                    <div class="img" style="background-image: url('/assets/orangie.webp')"></div>
+                </div>
+                <div class="content">  
+                    <h2>music taste!</h2> 
+                    <p>click this lil spot i'll take you to my last.fm page! (last.fm logs all the music stuffs i do)</p>
+                </div>
+            </section>
+
+            <section id="games" onclick="window.open('https://steamcommunity.com/profiles/76561198884814114/', '_blank')">
+                <div class="feature">
+                    <div class="img" style="background-image: url('/assets/amog-us.png')"></div>
+                </div>
+                <div class="content">  
+                    <h2>epic gamer?</h2> 
+                    <p>i don't games very much, no league of legends player here >.<</p>
+                    <p>i play things like minecraft and sea of thieves! clicking this one will go to my steam page :)</p>
+                </div>
+            </section>
+        </div>
+
+        <script src='app.js'></script>
+
+        <style>
+
+            html, #overflowy {
+                overflow: scroll;
+            }
+
+            #pet {
+                visibility: hidden;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .sections {
+                display: flex;
+                flex-direction: column;
+                padding: 2%;
+                height: 100%;
+                justify-content: space-evenly;
+            }
+
+            .sections section {
+                display: flex;
+                width: 80%;
+                margin-bottom: 20px;
+                min-height: 250px;
+                border-radius: 20px;
+                overflow: hidden;
+                cursor: pointer;
+                border: 2px solid transparent;
+                transition: 1s;
+            }
+
+            .sections section:hover {
+                border-color: gray;
+            }
+
+            .sections section:nth-child(even) {
+                align-self: flex-end;
+                flex-direction: row-reverse;
+            }
+
+            .sections section:nth-child(odd) {
+                align-self: flex-start;
+            }
+
+            .sections section div {
+                background-color: var(--container-theme);
+            }
+
+            .sections section .feature {
+                width: 50%;
+            }
+
+            .sections section .feature .img {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+
+            .sections section .content {
+                width: 100%;
+                padding: 0 2% 0 2%;
+                word-break: break-all;
+            }
+        </style>
+    </body>
+</html>

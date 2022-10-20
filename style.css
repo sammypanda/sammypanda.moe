@@ -40,10 +40,13 @@
 html, body {
     margin: 0;
     min-width: 100vw;
+    width: 100vw;
     min-height: 100vh;
+    height: 100vh;
+    user-select: none
 }
 
-html {
+overflowy {
     animation-name: sunrise;
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -117,9 +120,13 @@ a {
     text-decoration: underline;
 }
 
-.header, .projects, .descriptor, #info {
+.header, .projects, .descriptor, #info, h2, p {
     font-family: 'Dosis', sans-serif;
     color: var(--theme);
+}
+
+p {
+    filter:opacity(0.9)
 }
 
 .images {

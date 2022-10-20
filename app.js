@@ -112,6 +112,7 @@ themeToggle = (theme) => {
         document.getElementById('theme').style.color = "dimgray";
         document.getElementById('theme').style.backgroundColor = "#d5deff";
         document.querySelector(':root').style.setProperty('--theme', 'white');
+        document.querySelector(':root').style.setProperty('--container-theme', 'hsla(211, 17.5%, 34.7%, 0.2)');
         pet.alt = "Dog";
         pet.src = "assets/img/dog.png"
         localStorage.setItem('theme', "light");
@@ -121,6 +122,7 @@ themeToggle = (theme) => {
         document.getElementById('theme').style.color = "white";
         document.getElementById('theme').style.backgroundColor = "#444444";
         document.querySelector(':root').style.setProperty('--theme', 'silver');
+        document.querySelector(':root').style.setProperty('--container-theme', 'hsla(0, 0%, 74.9%, 0.2)');
         pet.alt = "Cat";
         pet.src = "assets/img/cat.png"
         localStorage.setItem('theme', "dark");
