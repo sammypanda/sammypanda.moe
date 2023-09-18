@@ -60,7 +60,7 @@ info = (container, project) => {
     info.style.visibility = "visible"
     switch (project) {
         case "current":
-            info.innerHTML = "I'm the portfolio page you're on right now, I was made from absolute scratch!"
+            info.innerHTML = "I'm the page you're on right now! No frameworks, no tools; all original and from scratch"
             container.childNodes[3].setAttribute("href", "https://github.com/sammypanda/sammypanda.moe")
             container.childNodes[1].src = "assets/img/meta/favicon.ico"
             resetGoto(0)
