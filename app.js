@@ -162,3 +162,19 @@ if (localStorage.theme) {
 } else {
     themeToggle("light"); // Default Theme
 }
+
+/**
+ * onload hook
+ */
+window.onload = function () {
+    // reduce jank by waiting until js (and likely css) is done loading
+    document.getElementsByTagName("body")[0].style.visibility = "visible"
+}
+
+/**
+ * instantiate defaults
+ */
+changePortfolio(
+    document.getElementsByClassName("petegories")[0].children[1], 
+    "web"
+)
