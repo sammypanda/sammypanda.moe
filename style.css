@@ -37,13 +37,21 @@
     to { bottom: var(--pet-height); }
 }
 
-html, body {
+html, body, #page {
     margin: 0;
     min-width: 100vw;
     width: 100vw;
     min-height: 100vh;
     height: 100vh;
     user-select: none
+}
+
+#no-script-warning {
+    animation: 2s linear 3s appear 1 forwards;
+}
+
+#no-script-warning p {
+    text-align: center;
 }
 
 overflowy {
@@ -54,10 +62,9 @@ overflowy {
     background-attachment: fixed;
 }
 
-body {
+#page {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
 a {

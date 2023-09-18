@@ -163,8 +163,11 @@ if (localStorage.theme) {
  * onload hook
  */
 window.onload = function () {
+    // remove no-script warning
+    document.getElementById("no-script-warning").remove();
+
     // reduce jank by waiting until js (and likely css) is done loading
-    document.getElementsByTagName("body")[0].style.visibility = "visible"
+    document.getElementById("page").style.visibility = "visible"
 }
 
 /**

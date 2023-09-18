@@ -8,47 +8,55 @@
         <link rel='icon' href='assets/img/meta/favicon.ico'>
     </head>
 
-    <svg id='theme' width="30px" height="30px" viewBox="0 0 16 16" class="bi bi-moon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
-    </svg>
-
-    <div class='pet-wrap'>
-        <img id='pet' alt="pet" ontouchmove="isPetting(this.id)" src='assets/img/cat.png'/>
-    </div>
-
-    <body id="overflowy" style="visibility: hidden">
-        <div class="header">
-            <h1>who is?</h1>
-            <!-- <hr> -->
-            <ul class="menu">
-                <li><a href="index.html">home</a></li>
-                <li>|</li>
-                <li><a href="portfolio.html">portfolio</a></li>
-            </ul>
+    <body id="overflowy">
+        <div id="no-script-warning" style="opacity: 0%">
+            <p>This website utilises JavaScript :)</p>
         </div>
 
-        <div class="sections">
-            <section id="music" onclick="window.open('https://last.fm/user/sammypanda', '_blank')">
-                <div class="feature">
-                    <div class="img" style="background-image: url('/assets/orangie.webp')"></div>
-                </div>
-                <div class="content">  
-                    <h2>music taste!</h2> 
-                    <p>click this lil spot i'll take you to my last.fm page! (last.fm logs all the music stuffs i do)</p>
-                </div>
-            </section>
+        <div id="page" style="visibility: hidden;">
 
-            <section id="games" onclick="window.open('https://steamcommunity.com/profiles/76561198884814114/', '_blank')">
-                <div class="feature">
-                    <div class="img" style="background-image: url('/assets/amog-us.png')"></div>
-                </div>
-                <div class="content">  
-                    <h2>epic gamer?</h2> 
-                    <p>i don't games very much, no league of legends player here >.<</p>
-                    <p>i play things like minecraft and sea of thieves! clicking this one will go to my steam page :)</p>
-                </div>
-            </section>
-        </div>
+            <svg id='theme' width="30px" height="30px" viewBox="0 0 16 16" class="bi bi-moon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"/>
+            </svg>
+        
+            <div class='pet-wrap'>
+                <img id='pet' alt="pet" ontouchmove="isPetting(this.id)" src='assets/img/cat.png'/>
+            </div>
+
+            <div class="header">
+                <h1>who is?</h1>
+                <!-- <hr> -->
+                <ul class="menu">
+                    <li><a href="index.html">home</a></li>
+                    <li>|</li>
+                    <li><a href="portfolio.html">portfolio</a></li>
+                </ul>
+            </div>
+
+            <div class="sections">
+                <section id="music" onclick="window.open('https://last.fm/user/sammypanda', '_blank')">
+                    <div class="feature">
+                        <div class="img" style="background-image: url('/assets/orangie.webp')"></div>
+                    </div>
+                    <div class="content">  
+                        <h2>music taste!</h2> 
+                        <p>click this lil spot i'll take you to my last.fm page! (last.fm logs all the music stuffs i do)</p>
+                    </div>
+                </section>
+
+                <section id="games" onclick="window.open('https://steamcommunity.com/profiles/76561198884814114/', '_blank')">
+                    <div class="feature">
+                        <div class="img" style="background-image: url('/assets/amog-us.png')"></div>
+                    </div>
+                    <div class="content">  
+                        <h2>epic gamer?</h2> 
+                        <p>i don't games very much, no league of legends player here >.<</p>
+                        <p>i play things like minecraft and sea of thieves! clicking this one will go to my steam page :)</p>
+                    </div>
+                </section>
+            </div>
+
+        </div> <!-- end of page -->
 
         <script src='app.js'></script>
 
