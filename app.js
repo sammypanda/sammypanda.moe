@@ -133,19 +133,15 @@ themeToggle = (theme) => {
  * changing the portfolio category
  */
 changePortfolio = (title, category) => {
-    console.log(document.getElementsByClassName('projects'));
-
     const pcategories = document.getElementsByClassName('projects'); // portfolio categories
     const ptitles = document.getElementsByClassName('descriptor'); // the titles of the portfolios
     const currcategory = document.getElementById(category); // current selected category
 
     [...pcategories].forEach(category => {
-        // console.log(category)
         category.style.display = "none"
     });
 
     [...ptitles].forEach(ptitle => {
-        console.log(ptitle)
         ptitle.classList.remove("selected")
     })
 
