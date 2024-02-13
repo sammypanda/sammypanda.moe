@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Building a card!</title>
+</head>
+<body>
+    <div id="card-not-found" hidden>
+        <h1 id="card-not-found-message"></h1>
+        <h2 id="card-not-found-sub"></p>
+    </div>
+
+    <div id="valentines-card" hidden>
+        <div class="card-header"></div>
+
+        <div class="card" id="card-main">
+            <p id="card-intro">To ...</p>
+            <p id="card-body">
+                <!-- content inserted here -->
+            </p>
+            <p id="card-ending"></p>
+        </div>
+
+        <div class="card-footer">
+            <p id="card-footer-message"></p>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const urlParams = new URLSearchParams(document.location.search);
+    let card = new Card();
+
+    switch(urlParams.get("card").toLowerCase()) { // get the ?card=? url param
+        case "emi":
+            card = new Card("Emi", 
+                "<p>You really are the best and i don't know how i was able to stumble into you!</p><p>I'm very glad i did and i hope i get to stick around and bother you like i do now every day into the forever future.<p>You accept me and my unusual bits n pieces even when it isn't convenient, and you show me so much care and passion. You're vulnerable with me so often and i feel so safe to be that way with you too.</p><p>Thank you so much for being my partner! Happy valentines!</p>", 
+                "cat.png",
+                "My dearest, <span style='font-style: italic'>emipants</span>"
+            );
+            break;
+    }
+
+    // draw the card on the screen
+    card.buildScreen();
+    card.buildCard();
+
+    function Card(recipient, content, drawing, signoff) {
+        this.recipient = recipient;
+        this.content = content;
+        this.drawing = drawing;
+
+        console.log(`Hi! ${recipient} my love`);
+
+        this.buildScreen = function() {
+            if (!recipient) {
+                document.body.style.backgroundColor = "#8E7AB5";
+                document.title = "Card not found";
+                return;
+            }
+
+            document.body.style.backgroundColor = "#E493B3";
+            document.title = `${recipient}'s Card`;
+        }
+
+        this.buildCard = function() {
+            if (!recipient) {
+                document.getElementById("valentines-card").style.display = "none";
+                document.getElementById("card-not-found").style.display = "grid";
+                document.getElementById("card-not-found-message").innerHTML = document.title;
+                document.getElementById("card-not-found-sub").innerHTML = "&#x1F61E"; // sad face (hex)
+                return;
+            }
+            
+            document.getElementById("card-not-found").style.display = "none";
+            document.getElementById("valentines-card").style.display = "flex";
+            document.getElementById("card-footer-message").innerHTML = `Thank you for making me feel so loved and happy this year ${recipient}!`;
+            document.getElementById("card-intro").innerHTML = `To ${recipient}`;
+
+            if (!signoff) {
+                document.getElementById("card-ending").innerHTML = `&#x1F497; Happy Valentines!`;
+            } else {
+                document.getElementById("card-ending").innerHTML = `${signoff}`;
+            }
+
+            document.getElementById("card-body").innerHTML = `${content}`
+            
+            if (drawing) {
+                document.getElementById("card-body").innerHTML = `${content}<p style='color: #8E7AB5'>If you click on this card it will turn over to show the pixel art i made of you! <span style='font-style: italic'>I hope you like it >.<</span></p>`
+
+                document.getElementById("card-main").onclick = (() => {
+                    document.getElementById("card-main").style.animation = "1.2s linear 0s 2 alternate forwards running turn-half";
+
+                    setTimeout(() => {
+                        document.getElementById("card-main").innerHTML = "<img src='assets/img/cat.png'/>";
+
+                        setTimeout(() => {
+                            document.getElementById("card-main").style.animation = "";
+                            document.getElementById("card-main").onclick = "";
+                            document.getElementById("card-footer-message").innerHTML = "<p>" + document.getElementById("card-footer-message").innerText + " <a onclick='location.reload()' style='font-style: underline'>(Back to letter)</a></p>"
+                        }, "1100")
+                    }, "1200")
+                })
+            }
+        }
+    }
+</script>

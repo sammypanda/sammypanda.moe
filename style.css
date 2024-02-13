@@ -210,3 +210,65 @@ h1::selection, a::selection, p::selection, img::selection {
     text-decoration: underline;
     text-decoration-color: inherit;
 }
+
+#card-not-found h1, #card-not-found h2 {
+    display: flex;
+    font-family: 'Dosis', 'san-serif';
+    color: white;
+    justify-self: center;
+}
+
+#card-not-found h2 {
+    margin: 0;
+}
+
+#card-not-found h1 {
+    margin-bottom: 1px;
+}
+
+#valentines-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#valentines-card .card {
+    height: 450px;
+    width: 300px;
+    display: flex;
+    padding: 20px;
+    background-color: whitesmoke;
+    color: #444444;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#valentines-card .card img {
+    width: 100%;
+    height: 100%;
+}
+
+#valentines-card .card p {
+    margin: 0;
+}
+
+#valentines-card .card #card-body p {
+    margin: 15px 0 10px 0;
+}
+
+#valentines-card .card-footer {
+    color: #636363;
+    font-style: italic;
+}
+
+/* #valentines-card .card:hover {
+    transition: 10s;
+    transform: rotate3d(0, 1, 0, 45deg);
+} */
+
+@keyframes turn-half {
+    from { transform: rotate3d(0,0,0,0); }
+    to { transform: rotate3d(0, 1, 0, 90deg); }
+}
